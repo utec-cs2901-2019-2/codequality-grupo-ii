@@ -1,4 +1,4 @@
-package com.company;
+package calculator;
 
 import java.lang.Math;
 import java.util.Scanner;
@@ -23,7 +23,7 @@ public class operation {
     private static String depurar(String s) {
         s = s.replaceAll("\\s+", ""); //Elimina espacios en blanco
         s = "(" + s + ")";
-        String simbols = "+-*/()";
+        String simbols = "+-*/()^";
         String str = "";
 
         //Deja espacios entre operadores
@@ -185,7 +185,7 @@ public class operation {
             case '/':
                 return first / second;
             case '^':
-                return (float) Math.pow(first,second);
+                return (float) Math.pow(second,first);
             default:
                 return 0;
         }

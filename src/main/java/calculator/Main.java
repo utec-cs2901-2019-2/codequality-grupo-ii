@@ -1,9 +1,13 @@
-package com.company;
+package calculator ;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        operation op = new operation("1.0+2.0");
+        Scanner scanner = new Scanner(System.in);
+        String eq = scanner.nextLine();
+        operation op = new operation(eq);
         System.out.println(op.operate());
     }
 }
