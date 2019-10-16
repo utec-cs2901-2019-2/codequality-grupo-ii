@@ -1,5 +1,4 @@
 package com.company;
-import javafx.geometry.Pos;
 
 import java.lang.Math;
 import java.util.Scanner;
@@ -126,25 +125,25 @@ public class operation {
     public String reduceOperator(String equation) {
         String myResult = ""; 
         for (int i = 0; i < equation.length(); i++ ) {
-            if (isOperand(equation.charAt(1))) {
-                myResult = myResult + equation.charAt(1);
+            if (isOperand(equation.charAt(i))) {
+                myResult = myResult + equation.charAt(i);
             }
-            if (isParentesis(equation.charAt(1))) {
-                myResult = myResult + equation.charAt(1);
+            if (isParentesis(equation.charAt(i))) {
+                myResult = myResult + equation.charAt(i);
             }
-            if (isOperator(equation.charAt(1))) {
-                if (isPlusOrMinus(equation.charAt(1))) {
+            if (isOperator(equation.charAt(i))) {
+                if (isPlusOrMinus(equation.charAt(i))) {
                     if (isPlus(myResult.charAt(myResult.length() - 1)) && isMinus(equation.charAt(i))) {
-                        myResult = myResult.substring(0, myResult.length() - 2);
+                        myResult = myResult.substring(0, myResult.length() - 1);
                         myResult = myResult + '-';
                     } else if (isPlus(myResult.charAt(myResult.length() - 1)) && isPlus(equation.charAt(i))) {
-                        myResult = myResult.substring(0, myResult.length() - 2);
+                        myResult = myResult.substring(0, myResult.length() - 1);
                         myResult = myResult + '+';
                     } else if (isMinus(myResult.charAt(myResult.length() - 1)) && isMinus(equation.charAt(i))) {
-                        myResult = myResult.substring(0, myResult.length() - 2);
+                        myResult = myResult.substring(0, myResult.length() - 1);
                         myResult = myResult + '+';
                     } else if (isMinus(myResult.charAt(myResult.length() - 1)) && isPlus(equation.charAt(i))) {
-                        myResult = myResult.substring(0, myResult.length() - 2);
+                        myResult = myResult.substring(0, myResult.length() - 1);
                         myResult = myResult + '-';
                     } else {
                         myResult = myResult + equation.charAt(1);
